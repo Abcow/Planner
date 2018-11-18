@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Planner/v15
+/.vs/Planner/DesignTimeBuild
+/.vs
+/bin/Debug
+/src/Planner/obj
+/src/Planner.Framework/obj
+/src/Planner.Models/obj/Debug/TempPE
+/src/Planner.Models/obj
+/src/Planner.ViewModels/obj
+/src/Planner.Views/obj
