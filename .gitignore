@@ -12,3 +12,7 @@
 /src/Planner.Models/obj
 /src/Planner.ViewModels/obj
 /src/Planner.Views/obj
+/src/Planner.Presentation/obj
+/src/Planner.Events/obj
+/src/Planner.Calendar/obj
+/src/Planner.Application/obj

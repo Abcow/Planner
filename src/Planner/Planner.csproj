@@ -92,19 +92,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Planner.Models\Planner.Models.csproj">
-      <Project>{2f127ef7-ccab-4574-9f05-4a9afd7620e5}</Project>
-      <Name>Planner.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Planner.ViewModels\Planner.ViewModels.csproj">
-      <Project>{b6daa863-fbe2-4dba-9772-337942233cb4}</Project>
-      <Name>Planner.ViewModels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Planner.Views\Planner.Views.csproj">
-      <Project>{4f1cb88e-f693-4c3c-9075-d6a405ccf934}</Project>
-      <Name>Planner.Views</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
