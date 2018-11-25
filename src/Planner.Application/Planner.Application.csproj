@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>Planner.Application</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -15,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Planner.Calendar\Planner.Calendar.csproj" />
     <ProjectReference Include="..\Planner.Events\Planner.Events.csproj" />
+    <ProjectReference Include="..\Planner.Framework\Planner.Framework.csproj" />
   </ItemGroup>
 
 </Project>

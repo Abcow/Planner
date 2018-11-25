@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Planner.Calendar;
+using Planner.Events.Recurrence;
+using System;
 using System.Collections.Generic;
 
 namespace Planner.Application
@@ -13,7 +15,7 @@ namespace Planner.Application
             PreviousPlanning = previousPlanning;
             Start = start;
             RecurringEvents = recurringEvents;
-            NextPlanning = new Event();
+            NextPlanning = null;
         }
 
         public string Name { get; private set; }
