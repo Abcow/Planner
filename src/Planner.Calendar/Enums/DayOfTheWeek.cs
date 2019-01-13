@@ -19,16 +19,16 @@ namespace Planner.Calendar
     {
         public static int ToInt(this DayOfTheWeek dayOfTheWeek)
         {
-            int dayIndex = (int)dayOfTheWeek - (int)DateTimeScheme.FirstDayOfTheWeek;
-            dayIndex = dayIndex.Mod(7);
+            int dayIndex = (int)dayOfTheWeek - (int)CalendarScheme.FirstDayOfTheWeek;
+            dayIndex = dayIndex.DMod(7);
             return dayIndex + 1;
         }
 
         public static DayOfTheWeek FromInt(int i)
         {
             if (i > 7 || i < 1) throw new ArgumentException($"Invalid day of the week: {i}");
-            int dayIndex = (int)DateTimeScheme.FirstDayOfTheWeek + i - 1;
-            dayIndex = dayIndex.Mod(7);
+            int dayIndex = (int)CalendarScheme.FirstDayOfTheWeek + i - 1;
+            dayIndex = dayIndex.DMod(7);
             return (DayOfTheWeek)dayIndex;
         }
 

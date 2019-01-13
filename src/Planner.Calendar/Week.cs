@@ -1,5 +1,6 @@
 ﻿using Planner.Framework;
 using System;
+using static Planner.Calendar.Constants;
 
 namespace Planner.Calendar
 {
@@ -10,13 +11,13 @@ namespace Planner.Calendar
         private static Week GetWeekContaining(Day day)
         {
             int thursdayOffset = -(int)day.DayOfTheWeek; // Thursday == 0
-            if (day.DayOfTheWeek >= DateTimeScheme.FirstDayOfTheWeek)
+            if (day.DayOfTheWeek >= CalendarScheme.FirstDayOfTheWeek)
             {
-                thursdayOffset += 7;
+                thursdayOffset += DAYS_IN_A_WEEK;
             }
             var thursday = day + thursdayOffset;
-            var firstDay = thursday + ((int)DateTimeScheme.FirstDayOfTheWeek).Mod(-7);
-            var lastDay = firstDay + 6;
+            var firstDay = thursday + ((int)CalendarScheme.FirstDayOfTheWeek).DMod(-DAYS_IN_A_WEEK);
+            var lastDay = firstDay + DAYS_IN_A_WEEK - 1;
 
             return new Week(firstDay, lastDay, thursday);
         }
@@ -27,23 +28,23 @@ namespace Planner.Calendar
             _thursday = thursday;
         }
 
-        public static implicit operator Week(System.DateTime dateTime) => GetWeekContaining(dateTime);
+        public static implicit operator Week(DateTime dateTime) => GetWeekContaining(dateTime);
         public static implicit operator Week(Day day) => GetWeekContaining(day);
 
         public static implicit operator string(Week week) => week.ToString();
 
-        public static Week operator +(Week week, int increment) => week._thursday + (7 * increment);
-        public static Week operator -(Week week, int decrement) => week._thursday - (7 * decrement);
-        public static int operator -(Week week1, Week week2) => Convert.ToInt32((week1._thursday - week2._thursday).Weeks);
+        public static Week operator +(Week week, int increment) => week._thursday + (DAYS_IN_A_WEEK * increment);
+        public static Week operator -(Week week, int decrement) => week._thursday - (DAYS_IN_A_WEEK * decrement);
+        public static WDHMDuration operator -(Week week1, Week week2) => week1._thursday - week2._thursday;
 
-        public static bool operator <(Week week1, Week week2) => week2 - week1 < 0;
-        public static bool operator >(Week week1, Week week2) => week1 - week2 > 0;
-        public static bool operator ==(Week week1, Week week2) => week1 - week2 == 0;
+        public static bool operator <(Week week1, Week week2) => (week1 - week2).IsNegative;
+        public static bool operator >(Week week1, Week week2) => (week1 - week2).IsPositive;
+        public static bool operator ==(Week week1, Week week2) => (week1 - week2).IsZero;
         public static bool operator !=(Week week1, Week week2) => !(week1 == week2);
         public static bool operator <=(Week week1, Week week2) => !(week1 > week2);
         public static bool operator >=(Week week1, Week week2) => !(week1 < week2);
 
-        public WeekOfTheYear WeekOfTheYear => (WeekOfTheYear)((int)_thursday.DayOfTheYear / 7);
+        public WeekOfTheYear WeekOfTheYear => (WeekOfTheYear)((int)_thursday.DayOfTheYear / DAYS_IN_A_WEEK);
 
         public Year Year => _thursday;
         public Month Month => _thursday;

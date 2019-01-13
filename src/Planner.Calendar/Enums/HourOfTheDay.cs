@@ -47,7 +47,7 @@ namespace Planner.Calendar
         {
             int numeral = hourOfTheDay.ToInt();
 
-            if (DateTimeScheme.TwentyFourHourTime)
+            if (CalendarScheme.TwentyFourHourTime)
             {
                 return $"{numeral:D2}:00";
             }

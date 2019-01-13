@@ -1,4 +1,5 @@
 ﻿using Planner.Framework;
+using static Planner.Calendar.Constants;
 
 namespace Planner.Calendar
 {
@@ -26,11 +27,11 @@ namespace Planner.Calendar
 
         public static Month operator +(Month month, int increment) => month.FirstDay.AddMonths(increment);
         public static Month operator -(Month month, int decrement) => month.FirstDay.AddMonths(-decrement);
-        public static int operator -(Month month1, Month month2) => 12 * (month1.Year.Number - month2.Year.Number) + (month1.MonthOfTheYear - month2.MonthOfTheYear);
+        public static YMDuration operator -(Month month1, Month month2) => new YMDuration(month1.Year.Number - month2.Year.Number, month1.MonthOfTheYear - month2.MonthOfTheYear);
 
-        public static bool operator <(Month month1, Month month2) => month2 - month1 < 0;
-        public static bool operator >(Month month1, Month month2) => month1 - month2 > 0;
-        public static bool operator ==(Month month1, Month month2) => month1 - month2 == 0;
+        public static bool operator <(Month month1, Month month2) => (month1 - month2).IsNegative;
+        public static bool operator >(Month month1, Month month2) => (month1 - month2).IsPositive;
+        public static bool operator ==(Month month1, Month month2) => (month1 - month2).IsZero;
         public static bool operator !=(Month month1, Month month2) => !(month1 == month2);
         public static bool operator <=(Month month1, Month month2) => !(month1 > month2);
         public static bool operator >=(Month month1, Month month2) => !(month1 < month2);
@@ -47,27 +48,27 @@ namespace Planner.Calendar
                 switch (FirstDay.DayOfTheWeek)
                 {
                     case DayOfTheWeek.Tuesday:
-                        if (DayCount >= 31) return 5;
+                        if (DayCount >= 31) return MAX_WEEKS_IN_A_MONTH;
                         break;
 
                     case DayOfTheWeek.Wednesday:
-                        if (DayCount >= 30) return 5;
+                        if (DayCount >= 30) return MAX_WEEKS_IN_A_MONTH;
                         break;
 
                     case DayOfTheWeek.Thursday:
-                        if (DayCount >= 29) return 5;
+                        if (DayCount >= 29) return MAX_WEEKS_IN_A_MONTH;
                         break;
                 }
 
-                return 4;
+                return MIN_WEEKS_IN_A_MONTH;
             }
         }
 
         public Week GetWeek(WeekOfTheMonth week)
         {
             if (week.ToInt() > WeekCount) return null;
-            var firstThursdayOffset = (-(int)FirstDay.DayOfTheWeek).Mod(7);
-            var dayInWeek = FirstDay + firstThursdayOffset + (int)week * 7;
+            var firstThursdayOffset = (-(int)FirstDay.DayOfTheWeek).DMod(7);
+            var dayInWeek = FirstDay + firstThursdayOffset + (int)week * DAYS_IN_A_WEEK;
             return dayInWeek.Week;
         }
 

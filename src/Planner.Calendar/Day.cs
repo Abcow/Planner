@@ -1,25 +1,37 @@
 ﻿using System;
+using static Planner.Calendar.Constants;
 
 namespace Planner.Calendar
 {
     public class Day
     {
-        private System.DateTime _date;
+        private DateTime _date;
 
-        private Day(System.DateTime dateTime)
+        private Day(DateTime dateTime)
         {
             _date = dateTime.Date;
         }
 
         public static implicit operator string(Day day) => day.ToString();
-        public static implicit operator Day(System.DateTime dateTime) => new Day(dateTime);
-        public static implicit operator System.DateTime(Day day) => day._date;
+        public static implicit operator Day(DateTime dateTime) => new Day(dateTime);
+        public static implicit operator DateTime(Day day) => day._date;
 
         public static Day operator +(Day day, int increment) => day.AddDays(increment);
         public static Day operator -(Day day, int decrement) => day.AddDays(-decrement);
-        public static Day operator +(Day day, Duration duration) => day.AddYears(duration.Years).AddMonths(duration.Months).AddWeeks(duration.Weeks).AddDays(duration.Days + ((duration.Hours + duration.Minutes / 60) / 24));
-        public static Day operator -(Day day, Duration duration) => day.AddYears(-duration.Years).AddMonths(-duration.Months).AddWeeks(-duration.Weeks).AddDays(-duration.Days - ((duration.Hours + duration.Minutes / 60) / 24));
-        public static Duration operator -(Day day1, Day day2) => new Duration(days: Convert.ToInt32((day1._date - day2._date).TotalDays));
+
+        public static Day operator +(Day day, CompositeDuration duration) =>
+            day.AddYears(duration.YearsComponent)
+            .AddMonths(duration.MonthsComponent)
+            .AddWeeks(duration.WeeksComponent)
+            .AddDays(duration.DaysComponent);
+        
+        public static Day operator -(Day day, CompositeDuration duration) =>
+            day.AddYears(-duration.YearsComponent)
+            .AddMonths(-duration.MonthsComponent)
+            .AddWeeks(-duration.WeeksComponent)
+            .AddDays(-duration.DaysComponent);
+
+        public static WDHMDuration operator -(Day day1, Day day2) => new WDHMDuration(days: Convert.ToInt32((day1._date - day2._date).TotalDays));
 
         public static bool operator <(Day day1, Day day2) => (day1 - day2).IsNegative;
         public static bool operator >(Day day1, Day day2) => (day1 - day2).IsPositive;
@@ -35,10 +47,10 @@ namespace Planner.Calendar
         public Week Week => this;
         public Month Month => this;
         public Year Year => this;
-        public System.DateTime DateTime => this;
+        public DateTime DateTime => this;
 
         public Day AddDays(int days) => _date.AddDays(days);
-        public Day AddWeeks(int weeks) => _date.AddDays(weeks * 7);
+        public Day AddWeeks(int weeks) => _date.AddDays(weeks * DAYS_IN_A_WEEK);
         public Day AddMonths(int months) => _date.AddMonths(months);
         public Day AddYears(int years) => _date.AddYears(years);
 
