@@ -1,0 +1,3 @@
+D:\Projects\Planner\src\Planner\obj\Debug\netcoreapp2.1\Planner.csproj.CoreCompileInputs.cache
+D:\Projects\Planner\src\Planner\obj\Debug\netcoreapp2.1\Planner.AssemblyInfoInputs.cache
+D:\Projects\Planner\src\Planner\obj\Debug\netcoreapp2.1\Planner.AssemblyInfo.cs

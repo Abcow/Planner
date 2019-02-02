@@ -1,0 +1,7 @@
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\Planner.Presentation.csprojAssemblyReference.cache
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\Controls\CalendarDay.baml
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\CalendarDayGrid.g.cs
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\Controls\CalendarDay.g.cs
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\Controls\CalendarGrid.g.cs
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\Planner.Presentation_MarkupCompile.cache
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp3.0\Planner.Presentation_MarkupCompile.lref

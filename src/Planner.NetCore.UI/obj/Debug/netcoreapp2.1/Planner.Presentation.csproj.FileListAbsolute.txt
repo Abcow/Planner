@@ -1,0 +1,4 @@
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp2.1\Planner.Presentation.csprojAssemblyReference.cache
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp2.1\Planner.Presentation.csproj.CoreCompileInputs.cache
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp2.1\Planner.Presentation.AssemblyInfoInputs.cache
+D:\Projects\Planner\src\Planner.Presentation\obj\Debug\netcoreapp2.1\Planner.Presentation.AssemblyInfo.cs

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Planner.Application</AssemblyName>
   </PropertyGroup>
 
@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Planner.Calendar\Planner.Calendar.csproj" />
     <ProjectReference Include="..\Planner.Events\Planner.Events.csproj" />
     <ProjectReference Include="..\Planner.Framework\Planner.Framework.csproj" />
+    <ProjectReference Include="..\Planner.Navigation\Planner.Navigation.csproj" />
   </ItemGroup>
 
 </Project>

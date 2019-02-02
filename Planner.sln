@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner", "src\Planner\Planner.csproj", "{352C0462-165C-406A-A016-5F21334E4927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.Calendar", "src\Planner.Calendar\Planner.Calendar.csproj", "{1625E44D-8E27-47FD-A629-5040544BE7FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Application", "src\Planner.Application\Planner.Application.csproj", "{E19D1997-4B44-4FAF-9586-D5E4C8C2DC0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.Events", "src\Planner.Events\Planner.Events.csproj", "{7A57C678-3F55-45A0-A274-9D947315C408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Calendar", "src\Planner.Calendar\Planner.Calendar.csproj", "{1625E44D-8E27-47FD-A629-5040544BE7FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.Framework", "src\Planner.Framework\Planner.Framework.csproj", "{6DAAC807-8B76-4152-9EDA-E254D1DB406C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Events", "src\Planner.Events\Planner.Events.csproj", "{7A57C678-3F55-45A0-A274-9D947315C408}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.Navigation", "src\Planner.Navigation\Planner.Navigation.csproj", "{80C20E14-6A4C-4B47-87F9-110969270156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Framework", "src\Planner.Framework\Planner.Framework.csproj", "{6DAAC807-8B76-4152-9EDA-E254D1DB406C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.NetCore.UI", "src\Planner.NetCore.UI\Planner.NetCore.UI.csproj", "{59AD617B-605C-4689-AC95-9057D7F61077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Presentation", "src\Planner.Presentation\Planner.Presentation.csproj", "{0B55C99F-F026-46DE-8274-A80A0F95896A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.NetCore", "src\Planner.NetCore\Planner.NetCore.csproj", "{D6368099-772E-4301-8993-4DEB2AF1E63D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Core", ".NET Core", "{25989478-6A70-46DA-8082-60FD312AD368}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner.Application", "src\Planner.Application\Planner.Application.csproj", "{B2C591FE-E220-4C42-A69B-FA8497C8D719}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Standard", ".NET Standard", "{BEA127BB-1B78-4123-A10E-D092DFFB807D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{352C0462-165C-406A-A016-5F21334E4927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{352C0462-165C-406A-A016-5F21334E4927}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{352C0462-165C-406A-A016-5F21334E4927}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{352C0462-165C-406A-A016-5F21334E4927}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E19D1997-4B44-4FAF-9586-D5E4C8C2DC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E19D1997-4B44-4FAF-9586-D5E4C8C2DC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E19D1997-4B44-4FAF-9586-D5E4C8C2DC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E19D1997-4B44-4FAF-9586-D5E4C8C2DC0E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1625E44D-8E27-47FD-A629-5040544BE7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1625E44D-8E27-47FD-A629-5040544BE7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1625E44D-8E27-47FD-A629-5040544BE7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,13 +39,34 @@ Global
 		{6DAAC807-8B76-4152-9EDA-E254D1DB406C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DAAC807-8B76-4152-9EDA-E254D1DB406C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DAAC807-8B76-4152-9EDA-E254D1DB406C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B55C99F-F026-46DE-8274-A80A0F95896A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B55C99F-F026-46DE-8274-A80A0F95896A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B55C99F-F026-46DE-8274-A80A0F95896A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B55C99F-F026-46DE-8274-A80A0F95896A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C20E14-6A4C-4B47-87F9-110969270156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C20E14-6A4C-4B47-87F9-110969270156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C20E14-6A4C-4B47-87F9-110969270156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C20E14-6A4C-4B47-87F9-110969270156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59AD617B-605C-4689-AC95-9057D7F61077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59AD617B-605C-4689-AC95-9057D7F61077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59AD617B-605C-4689-AC95-9057D7F61077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59AD617B-605C-4689-AC95-9057D7F61077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6368099-772E-4301-8993-4DEB2AF1E63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6368099-772E-4301-8993-4DEB2AF1E63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6368099-772E-4301-8993-4DEB2AF1E63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6368099-772E-4301-8993-4DEB2AF1E63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C591FE-E220-4C42-A69B-FA8497C8D719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C591FE-E220-4C42-A69B-FA8497C8D719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C591FE-E220-4C42-A69B-FA8497C8D719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C591FE-E220-4C42-A69B-FA8497C8D719}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1625E44D-8E27-47FD-A629-5040544BE7FB} = {BEA127BB-1B78-4123-A10E-D092DFFB807D}
+		{7A57C678-3F55-45A0-A274-9D947315C408} = {BEA127BB-1B78-4123-A10E-D092DFFB807D}
+		{6DAAC807-8B76-4152-9EDA-E254D1DB406C} = {BEA127BB-1B78-4123-A10E-D092DFFB807D}
+		{80C20E14-6A4C-4B47-87F9-110969270156} = {BEA127BB-1B78-4123-A10E-D092DFFB807D}
+		{59AD617B-605C-4689-AC95-9057D7F61077} = {25989478-6A70-46DA-8082-60FD312AD368}
+		{D6368099-772E-4301-8993-4DEB2AF1E63D} = {25989478-6A70-46DA-8082-60FD312AD368}
+		{B2C591FE-E220-4C42-A69B-FA8497C8D719} = {BEA127BB-1B78-4123-A10E-D092DFFB807D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2B32587-C0D4-4354-8931-37B7A8ED144F}

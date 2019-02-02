@@ -14,14 +14,14 @@ namespace Planner.Calendar
             var lastDay = new DateTime(day.DateTime.Year, 12, 31);
 
             return new Year(firstDay, lastDay);
-       }
+        }
 
         private Year(Day firstDay, Day lastDay)
             : base(firstDay, lastDay)
         {
             _dateTime = firstDay;
         }
-        
+
         public static implicit operator Year(Day day) => GetYearContaining(day);
         public static implicit operator Year(DateTime dateTime) => GetYearContaining(dateTime);
 
@@ -37,7 +37,7 @@ namespace Planner.Calendar
         public static bool operator !=(Year year1, Year year2) => !(year1 == year2);
         public static bool operator <=(Year year1, Year year2) => !(year1 > year2);
         public static bool operator >=(Year year1, Year year2) => !(year1 < year2);
-        
+
         public int Number => _dateTime.Year;
 
         public bool IsLeapYear => DateTime.IsLeapYear(_dateTime.Year);
